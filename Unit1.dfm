@@ -1,10 +1,13 @@
 object Form1: TForm1
-  Left = 192
-  Top = 125
-  Width = 1044
-  Height = 591
-  Caption = 'PingPiongPi'
+  Left = 210
+  Top = 95
+  Width = 1134
+  Height = 724
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'PingPong'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -56,14 +59,14 @@ object Form1: TForm1
   object background: TShape
     Left = 0
     Top = 0
-    Width = 1028
-    Height = 532
-    Align = alClient
+    Width = 1118
+    Height = 594
+    Align = alTop
     Brush.Color = clTeal
   end
   object ball: TImage
-    Left = 488
-    Top = 232
+    Left = 520
+    Top = 264
     Width = 32
     Height = 32
     AutoSize = True
@@ -203,7 +206,7 @@ object Form1: TForm1
   end
   object pOne: TImage
     Left = 16
-    Top = 168
+    Top = 200
     Width = 30
     Height = 150
     AutoSize = True
@@ -776,8 +779,8 @@ object Form1: TForm1
     Transparent = True
   end
   object pTwo: TImage
-    Left = 984
-    Top = 184
+    Left = 1072
+    Top = 200
     Width = 30
     Height = 150
     AutoSize = True
@@ -1349,18 +1352,82 @@ object Form1: TForm1
       419AFF54419AFF54419AFF54419AFF54419AFF54419AFF54419AFF54419A}
     Transparent = True
   end
+  object lblScore: TLabel
+    Left = 0
+    Top = 594
+    Width = 1118
+    Height = 75
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Color = clAppWorkSpace
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -64
+    Font.Name = 'Consolas'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnRestart: TButton
+    Left = 192
+    Top = 312
+    Width = 673
+    Height = 65
+    Cursor = crHandPoint
+    Caption = 'Victory - Restart '
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clTeal
+    Font.Height = -23
+    Font.Name = 'Wide Latin'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnClick = btnRestartClick
+  end
+  object btnReset: TButton
+    Left = 464
+    Top = 408
+    Width = 137
+    Height = 41
+    Cursor = crHandPoint
+    Caption = 'Start Game'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -19
+    Font.Name = 'Georgia'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnResetClick
+  end
   object MainMenu1: TMainMenu
     object HELP: TMenuItem
       Caption = 'HELP'
       object HowToPlay: TMenuItem
         Caption = 'How To Play'
+        OnClick = HowToPlayClick
       end
     end
     object About1: TMenuItem
       Caption = 'About'
+      object aboutMe: TMenuItem
+        Caption = 'My programs'
+        OnClick = aboutMeClick
+      end
+      object link: TMenuItem
+        Caption = 'Find Source Code'
+        OnClick = linkClick
+      end
+    end
+    object Exit1: TMenuItem
+      Caption = 'EXIT'
+      OnClick = Exit1Click
     end
   end
   object TimerBall: TTimer
+    Enabled = False
     Interval = 35
     OnTimer = TimerBallTimer
     Left = 32
@@ -1369,14 +1436,14 @@ object Form1: TForm1
     Enabled = False
     Interval = 20
     OnTimer = RDTimer
-    Left = 992
+    Left = 1056
     Top = 40
   end
   object RU: TTimer
     Enabled = False
     Interval = 20
     OnTimer = RUTimer
-    Left = 960
+    Left = 1024
     Top = 40
   end
   object LU: TTimer

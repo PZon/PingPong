@@ -27,6 +27,12 @@ __published:	// IDE-managed Components
     TTimer *RU;
     TTimer *LU;
     TTimer *LD;
+    TMenuItem *Exit1;
+    TButton *btnRestart;
+    TButton *btnReset;
+    TLabel *lblScore;
+    TMenuItem *aboutMe;
+    TMenuItem *link;
     void __fastcall TimerBallTimer(TObject *Sender);
     void __fastcall RUTimer(TObject *Sender);
     void __fastcall RDTimer(TObject *Sender);
@@ -36,6 +42,12 @@ __published:	// IDE-managed Components
           TShiftState Shift);
     void __fastcall FormKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
+    void __fastcall btnRestartClick(TObject *Sender);
+    void __fastcall btnResetClick(TObject *Sender);
+    void __fastcall Exit1Click(TObject *Sender);
+    void __fastcall aboutMeClick(TObject *Sender);
+    void __fastcall linkClick(TObject *Sender);
+    void __fastcall HowToPlayClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
     __fastcall TForm1(TComponent* Owner);
