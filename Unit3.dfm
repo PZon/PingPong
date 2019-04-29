@@ -75,7 +75,7 @@ object Form3: TForm3
       'To move player Two (right) Up use key ARROW UP'
       'To move player Two (right) Down use key ARROW DOWN'
       ''
-      'Wins player who first gain 7 points.'
+      'Wins player who first gain 3 points.'
       ''
       'Have a nice fun and good luck.')
     ParentFont = False
